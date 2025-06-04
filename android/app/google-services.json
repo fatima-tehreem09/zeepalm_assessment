@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "481814121665",
+    "project_id": "zee-palm-flutter",
+    "storage_bucket": "zee-palm-flutter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481814121665:android:917b9b6e42d60eff069840",
+        "android_client_info": {
+          "package_name": "com.example.zeepalm_assessment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2EJkXTe89Oo79c_o3IhAPludP2Zw5NBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
