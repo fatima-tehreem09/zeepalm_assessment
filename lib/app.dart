@@ -41,7 +41,7 @@ class App extends ConsumerWidget {
           child: child!,
         );
       },
-      title: "ZeePalm Assessment",
+      title: "Assessment",
       debugShowCheckedModeBanner: false,
       routerConfig: ref.read(routerConfigProvider),
     );

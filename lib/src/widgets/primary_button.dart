@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zeepalm_assessment/src/widgets/inter_text.dart';
+import 'package:zeepalm_assessment/src/widgets/montaserat_text.dart';
 
 import '../const/colors.dart';
 
@@ -11,30 +11,47 @@ class AppButton extends StatelessWidget {
     this.isLogout = false,
     this.isLoading = false,
     this.child,
+    this.isTransparent = false,
+    this.borderRadius,
+    this.textColor,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: 24,
+      vertical: 8.56,
+    ),
+    this.showOpacity = true,
+    this.textSize,
   });
 
   final VoidCallback onPressed;
   final String text;
   final bool isLogout;
+  final bool isTransparent;
   final bool isLoading;
   final Widget? child;
+  final BorderRadius? borderRadius;
+  final Color? textColor;
+  final bool showOpacity;
+  final EdgeInsets padding;
+  final double? textSize;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
+        foregroundColor: AppColors.primaryPink,
         backgroundColor:
             // isLoading ? const Color(0xffE5E7EB) :
-            AppColors.primaryBlue,
+            isTransparent
+                ? Colors.transparent
+                : AppColors.primaryPink
+                    .withValues(alpha: showOpacity ? 0.1 : 1.0),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: borderRadius ?? BorderRadius.circular(8.56),
         ),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-          vertical: 12,
-        ),
-        minimumSize: const Size(double.infinity, 48),
+        padding: padding,
+        maximumSize: const Size(double.infinity, 39),
+        minimumSize: Size.zero,
         elevation: 0.0,
         overlayColor: Colors.transparent,
       ),
@@ -46,11 +63,12 @@ class AppButton extends StatelessWidget {
             ))
           : text != ''
               ? Center(
-                  child: InterText(
+                  child: Montserrat(
+                    textAlign: TextAlign.center,
                     text,
-                    size: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.primaryWhite,
+                    size: textSize ?? 14.99,
+                    fontWeight: FontWeight.w500,
+                    color: textColor ?? AppColors.primaryPink,
                   ),
                 )
               : child!,

@@ -41,7 +41,7 @@ class CachedImageWidget extends StatelessWidget {
               value: progress.progress,
               strokeCap: StrokeCap.round,
               strokeWidth: 4,
-              backgroundColor: AppColors.primaryBlue,
+              backgroundColor: AppColors.primaryPink,
             ),
           ),
         ),

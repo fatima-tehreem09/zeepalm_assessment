@@ -17,15 +17,6 @@ extension SliverExtension on Widget {
   }
 }
 
-extension PaddingExtension on Widget {
-  Widget withHorizontalPadding(double padding) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: padding),
-      child: this,
-    );
-  }
-}
-
 extension CenterAlignment on Widget {
   Widget get centerAlignment {
     return Center(
@@ -62,10 +53,32 @@ extension CenterLeftAlignment on Widget {
 }
 
 extension SliverPaddingExtension on Widget {
-  Widget get sliverPadding {
+  Widget sliverPadding(double padding) {
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       sliver: sliver,
     );
   }
+}
+
+extension PaddingExtension on Widget {
+  Widget withHorizontalPadding(double padding) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: padding),
+      child: this,
+    );
+  }
+}
+
+extension SizeSliverExtension on num {
+  SliverToBoxAdapter get sliverHeight => SliverToBoxAdapter(
+        child: SizedBox(
+          height: toDouble(),
+        ),
+      );
+  SliverToBoxAdapter get sliverWidth => SliverToBoxAdapter(
+        child: SizedBox(
+          width: toDouble(),
+        ),
+      );
 }

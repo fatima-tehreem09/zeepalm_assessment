@@ -6,14 +6,20 @@ import 'package:zeepalm_assessment/src/features/home/views/video_feed_screen.dar
 import 'package:zeepalm_assessment/src/features/home/views/video_upload_screen.dart';
 
 import '../features/auth/views/sign_up_screen.dart';
+import '../features/future_fusion/views/layout.dart';
 
 final _navigatorKey = GlobalKey<NavigatorState>();
 
 final routerConfigProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     navigatorKey: _navigatorKey,
-    initialLocation: SignInScreen.path,
+    initialLocation: BasicLayout.routePath,
     routes: [
+      GoRoute(
+        path: BasicLayout.routePath,
+        name: BasicLayout.routeName,
+        builder: BasicLayout.builder,
+      ),
       GoRoute(
         path: SignInScreen.path,
         name: SignInScreen.name,
