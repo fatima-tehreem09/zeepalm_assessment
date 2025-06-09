@@ -20,6 +20,8 @@ class AppButton extends StatelessWidget {
     ),
     this.showOpacity = true,
     this.textSize,
+    this.side = BorderSide.none,
+    this.maximumSize = const Size(double.infinity, 39),
   });
 
   final VoidCallback onPressed;
@@ -33,6 +35,8 @@ class AppButton extends StatelessWidget {
   final bool showOpacity;
   final EdgeInsets padding;
   final double? textSize;
+  final BorderSide side;
+  final Size maximumSize;
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +51,11 @@ class AppButton extends StatelessWidget {
                     .withValues(alpha: showOpacity ? 0.1 : 1.0),
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius ?? BorderRadius.circular(8.56),
+          side: side,
         ),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         padding: padding,
-        maximumSize: const Size(double.infinity, 39),
+        maximumSize: maximumSize,
         minimumSize: Size.zero,
         elevation: 0.0,
         overlayColor: Colors.transparent,

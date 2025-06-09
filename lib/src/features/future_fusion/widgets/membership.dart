@@ -88,7 +88,7 @@ class Membership extends ConsumerWidget {
             isPremier: true,
           ).sliver,
           17.41.sliverHeight,
-          SaveBlock().sliver,
+          const SaveBlock().sliver,
           24.91.sliverHeight,
           Montserrat(
             "What Our Members Say",
@@ -97,7 +97,7 @@ class Membership extends ConsumerWidget {
             fontWeight: FontWeight.w600,
           ).sliver,
           17.13.sliverHeight,
-          Comments(),
+          const Comments(),
         ],
       ),
     );

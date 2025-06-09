@@ -3,11 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zeepalm_assessment/src/const/assets.dart';
-import 'package:zeepalm_assessment/src/const/colors.dart';
 import 'package:zeepalm_assessment/src/features/future_fusion/widgets/membership.dart';
 import 'package:zeepalm_assessment/src/util/extensions/size_extension.dart';
 import 'package:zeepalm_assessment/src/widgets/app_bar.dart';
 import 'package:zeepalm_assessment/src/widgets/tab_bar.dart';
+
+import '../widgets/content.dart';
 
 class BasicLayout extends ConsumerStatefulWidget {
   const BasicLayout.builder(
@@ -82,17 +83,13 @@ class _BasicLayoutState extends ConsumerState<BasicLayout>
               ],
             ),
             19.53.height,
-            // Divider(
-            //   color: AppColors.borderColor,
-            // ).withHorizontalPadding(13),
             Expanded(
               child: TabBarView(
                 controller: _controller,
                 children: const [
                   Membership(),
                   Text("data"),
-                  Text("data"),
-                  // Content(),
+                  Content(),
                   Text("data"),
                   Text("data"),
                   Text("data"),

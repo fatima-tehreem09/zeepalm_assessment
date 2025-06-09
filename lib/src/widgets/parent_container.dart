@@ -37,7 +37,7 @@ class ParentContainer extends StatelessWidget {
               radius,
             ),
         color: fillColor.withValues(
-          alpha: showOpacity ? opacity : 0.0,
+          alpha: showOpacity ? opacity : 1.0,
         ),
         boxShadow: shadow,
         border: showBorder

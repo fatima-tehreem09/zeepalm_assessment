@@ -8,9 +8,12 @@ class CachedImageWidget extends StatelessWidget {
   final double? size;
   final double? width;
   final double? borderRadius;
+  final BorderRadius? radius;
   final BoxFit? fit;
+
   const CachedImageWidget({
     super.key,
+    this.radius,
     this.width,
     this.borderRadius,
     required this.url,
@@ -21,7 +24,7 @@ class CachedImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(borderRadius ?? size!),
+      borderRadius: radius ?? BorderRadius.circular(borderRadius ?? size!),
       child: CachedNetworkImage(
         imageUrl: url.isEmpty
             ? "https://plus.unsplash.com/premium_photo-1726611969494-3e1ca8ae6d05?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
